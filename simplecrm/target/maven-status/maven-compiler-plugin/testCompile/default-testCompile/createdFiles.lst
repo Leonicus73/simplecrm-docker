@@ -1,0 +1,4 @@
+com/example/simplecrm/SimplecrmApplicationTests.class
+com/example/simplecrm/service/CustomerServiceImplTest.class
+com/example/simplecrm/controller/CustomerControllerTest.class
+com/example/simplecrm/service/DemoServiceTest.class

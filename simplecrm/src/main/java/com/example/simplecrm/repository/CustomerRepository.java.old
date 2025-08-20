@@ -1,0 +1,53 @@
+package com.example.simplecrm;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CustomerRepository {
+
+  private ArrayList<Customer> customers = new ArrayList<>();
+
+    // Preload data here now
+  public CustomerRepository() {
+    customers.add(Customer.builder().firstName("Bruce").lastName("Banner").build());
+    customers.add(Customer.builder().firstName("Peter").lastName("Parker").jobTitle("scientist").build());
+    customers.add(Customer.builder().firstName("Stephen").lastName("Strange").build());
+    customers.add(Customer.builder().firstName("Steve").lastName("Rogers").build());
+  }
+
+  // Create
+  public Customer createCustomer(Customer customer) {
+    customers.add(customer);
+    return customer;
+  }
+
+  // Get One
+  public Customer getCustomer(int index) {
+    return customers.get(index);
+  }
+
+  // Get All
+  public ArrayList<Customer> getAllCustomers() {
+    return customers;
+  }
+
+  // Update
+  public Customer updateCustomer(int index, Customer customer) {
+    Customer customerToUpdate = customers.get(index);
+    customerToUpdate.setFirstName(customer.getFirstName());
+    customerToUpdate.setLastName(customer.getLastName());
+    customerToUpdate.setEmail(customer.getEmail());
+    customerToUpdate.setContactNo(customer.getContactNo());
+    customerToUpdate.setJobTitle(customer.getJobTitle());
+    customerToUpdate.setYearOfBirth(customer.getYearOfBirth());
+    return customerToUpdate;
+  }
+
+  // Delete
+  public void deleteCustomer(int index) {
+    customers.remove(index);
+  }
+
+}
