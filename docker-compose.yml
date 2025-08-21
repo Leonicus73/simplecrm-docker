@@ -5,8 +5,8 @@ services:
     image: postgres:15
     environment:
       POSTGRES_DB: simplecrm
-      POSTGRES_USER: crmuser
-      POSTGRES_PASSWORD: crmpass
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
     volumes:
@@ -14,14 +14,18 @@ services:
 
   app:
     image: leonicus73/simplecrm:latest
+    # For M2 Mac unremark below
+    # platform: linux/amd64
     ports:
       - "8080:8080"
     depends_on:
       - db
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/simplecrm
-      SPRING_DATASOURCE_USERNAME: crmuser
-      SPRING_DATASOURCE_PASSWORD: crmpass
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
 
 volumes:
   pgdata:
