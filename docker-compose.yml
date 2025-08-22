@@ -14,7 +14,7 @@ services:
 
   app:
     image: leonicus73/simplecrm:latest
-    # For M2 Mac unremark below
+    # For M series Mac unremark below
     # platform: linux/amd64
     ports:
       - "8080:8080"
