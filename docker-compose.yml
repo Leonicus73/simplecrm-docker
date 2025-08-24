@@ -13,7 +13,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    #Image from Docker Hub
+    #Image from my hub
     image: leonicus/simplecrm:latest
     # For M series Mac unremark below
     # platform: linux/amd64
