@@ -13,7 +13,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   app:
-    image: leonicus73/simplecrm:latest
+    image: leonicus/simplecrm:latest
     # For M series Mac unremark below
     # platform: linux/amd64
     ports:
